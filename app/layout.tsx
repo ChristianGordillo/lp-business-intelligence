@@ -16,25 +16,27 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.luxeandpristine.com"),
 
   title: {
-    default:
-      "Luxe & Pristine | Operational Intelligence for Short-Term Rentals",
+    default: "Luxe & Pristine | Cleaning Intelligence for Short-Term Rentals",
     template: "%s | Luxe & Pristine",
   },
 
   description:
-    "Luxe & Pristine combines operational intelligence, automation, and trusted cleaning teams to power short-term rental turnovers.",
+    "The Cleaning Intelligence platform for professional short-term rental operators, combining software, automation, and trusted cleaning teams.",
 
   applicationName: "Luxe & Pristine",
 
   keywords: [
-    "short-term rental operations",
+    "cleaning intelligence",
+    "short-term rentals",
     "vacation rental operations",
     "turnover management",
+    "turnovers",
     "Airbnb cleaning",
+    "housekeeping",
+    "property operations",
+    "cleaning automation",
     "property management",
-    "housekeeping operations",
     "Miami short-term rentals",
-    "operational intelligence",
     "Luxe & Pristine",
   ],
 
@@ -53,10 +55,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title:
-      "Luxe & Pristine | Operational Intelligence for Short-Term Rentals",
+    title: "Luxe & Pristine | Cleaning Intelligence for Short-Term Rentals",
     description:
-      "We combine software, automation, and trusted cleaning teams to power reliable short-term rental turnovers.",
+      "The Cleaning Intelligence platform for professional short-term rental operators.",
     url: "/",
     siteName: "Luxe & Pristine",
     locale: "en_US",
@@ -66,17 +67,16 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Luxe & Pristine operational intelligence",
+        alt: "Luxe & Pristine | Cleaning Intelligence",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "Luxe & Pristine | Operational Intelligence for Short-Term Rentals",
+    title: "Luxe & Pristine | Cleaning Intelligence for Short-Term Rentals",
     description:
-      "We combine software, automation, and trusted cleaning teams to power reliable short-term rental turnovers.",
+      "The Cleaning Intelligence platform for professional short-term rental operators.",
     images: ["/og-image.jpg"],
   },
 
@@ -95,6 +95,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -108,7 +109,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
