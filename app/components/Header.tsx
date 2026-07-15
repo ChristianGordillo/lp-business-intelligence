@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 const navItems = [
@@ -23,62 +24,90 @@ export default function Header() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full px-4 pt-3 md:px-8">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border border-[#E8C686]/20 bg-[#FAF8F3]/90 px-5 shadow-[0_10px_35px_rgba(8,42,70,0.08)] backdrop-blur-xl md:px-6">
-  {/* Logo */}
-  <a href="#" className="flex items-center gap-3">
-    <Image
-      src="/logo.png"
-      alt="Luxe & Pristine"
-      width={36}
-      height={36}
-      priority
-      className="h-8 w-auto"
-    />
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Luxe & Pristine"
+            width={36}
+            height={36}
+            priority
+            className="h-8 w-auto"
+          />
 
-    <span className="hidden text-sm font-bold tracking-tight text-[#082A46] sm:block">
-      Luxe & Pristine
-    </span>
-  </a>
+          <span className="hidden text-sm font-bold tracking-tight text-[#082A46] sm:block">
+            Luxe &amp; Pristine
+          </span>
+        </Link>
 
-  {/* Navigation */}
-  <nav className="hidden items-center gap-8 md:flex">
-    {navItems.map((item) => (
-      <a
-        key={item.label}
-        href={item.href}
-        className="text-sm font-medium text-[#33546F] transition-colors duration-300 hover:text-[#B28435]"
-      >
-        {item.label}
-      </a>
-    ))}
-  </nav>
+        {/* Navigation */}
+        <nav className="hidden items-center gap-8 md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="text-sm font-medium text-[#33546F] transition-colors duration-300 hover:text-[#B28435]"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
-  {/* CTA */}
-  <a
-    href="https://wa.me/17864482284"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
-      inline-flex
-      items-center
-      gap-2.5
-      rounded-full
-      bg-[#D4A84F]
-      px-6
-      py-3
-      text-sm
-      font-semibold
-      text-white
-      transition-all
-      duration-300
-      hover:-translate-y-0.5
-      hover:bg-[#082A46]
-      hover:shadow-lg
-    "
-  >
-    <WhatsAppIcon className="h-5 w-5 shrink-0" />
-    Let's Talk
-  </a>
-</div>
+        {/* Actions */}
+        <div className="flex items-center gap-3">
+          <a
+            href="https://app.luxeandpristine.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              hidden
+              sm:inline-flex
+              items-center
+              rounded-full
+              border
+              border-[#082A46]/15
+              px-5
+              py-3
+              text-sm
+              font-semibold
+              text-[#082A46]
+              transition-all
+              duration-300
+              hover:border-[#082A46]
+              hover:bg-[#082A46]
+              hover:text-white
+            "
+          >
+            Launch App
+          </a>
+
+          <a
+            href="https://wa.me/17864482284"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex
+              items-center
+              gap-2.5
+              rounded-full
+              bg-[#D4A84F]
+              px-6
+              py-3
+              text-sm
+              font-semibold
+              text-white
+              transition-all
+              duration-300
+              hover:-translate-y-0.5
+              hover:bg-[#082A46]
+              hover:shadow-lg
+            "
+          >
+            <WhatsAppIcon className="h-5 w-5 shrink-0" />
+            Let's Talk
+          </a>
+        </div>
+      </div>
     </header>
   );
 }
