@@ -1,30 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colors */
+  --lp-navy: #082a46;
+  --lp-blue: #33546f;
+
+  --lp-gold: #b28435;
+  --lp-gold-button: #d4a84f;
+  --lp-gold-soft: #e8c686;
+
+  /* Backgrounds */
+  --lp-cream: #f7f3ea;
+  --lp-paper: #faf8f3;
+  --lp-white: #fffdfa;
+
+  /* Text */
+  --lp-text: #102c43;
+  --lp-text-soft: #526b7e;
+  --lp-muted: #7a8791;
+
+  /* Borders */
+  --lp-border: rgba(8, 42, 70, 0.12);
+  --lp-border-gold: rgba(178, 132, 53, 0.28);
+
+  --background: var(--lp-paper);
+  --foreground: var(--lp-text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+.font-editorial {
+  font-family: var(--font-editorial), Georgia, serif;
+}
+
+::selection {
+  background: rgba(232, 198, 134, 0.5);
+  color: var(--lp-navy);
 }
