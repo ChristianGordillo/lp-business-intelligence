@@ -1,10 +1,12 @@
 import { lasHuellasInvisibles } from "./las-huellas-invisibles";
 import { loQueLaHabitacionDecidioOlvidar } from "./lo-que-la-habitacion-decidio-olvidar";
+import { lasCosasQueSeQuedaron } from "./las-cosas-que-se-quedaron";
 import type { StoryContent } from "./types";
 
 export const stories: StoryContent[] = [
   lasHuellasInvisibles,
   loQueLaHabitacionDecidioOlvidar,
+  lasCosasQueSeQuedaron,
 ].sort(
   (a, b) =>
     new Date(b.publishedAt).getTime() -
